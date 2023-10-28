@@ -3,14 +3,14 @@ package Controlador;
 
 import Modelo.Factura;
 import Modelo.FicheroDatosFactura;
-import Vista.FacturaLuz;
+import Vista.FacturaLuz;;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.text.ParseException;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
@@ -75,5 +75,12 @@ public class ControladorFactura implements ActionListener{
                     vista.txtConsumoKWH.setText(String.valueOf(factura.getConsumoKWH()));
             }
         }
+    }
+
+    public int totalRecibos(){
+        DefaultListModel<Factura> model = (DefaultListModel<Factura>) vista.listaFactura.getModel();
+        int cantidadFacturas = model.getSize();
+        
+        return cantidadFacturas;
     }
 }

@@ -24,11 +24,12 @@ public class ControladorDatosFactura implements ActionListener{
     FicheroCliente ficherocliente = new FicheroCliente();
     
     ControladorFactura controladorFactura;
+    ControladorPrincipal ctlp;
     
     public ControladorDatosFactura(){
     }
     
-    public ControladorDatosFactura(FicheroDatosFactura fichero, DatosFactura vista, ControladorFactura controladorFactura) throws IOException{
+    public ControladorDatosFactura(FicheroDatosFactura fichero, DatosFactura vista, ControladorFactura controladorFactura, ControladorPrincipal ctlp) throws IOException{
     this.fichero=fichero;
     this.vista=vista;
     this.vista.guardar.addActionListener(this);
@@ -36,7 +37,7 @@ public class ControladorDatosFactura implements ActionListener{
     this.vista.Cliente.setModel(ficherocliente.llenarComboBox());
     
     this.controladorFactura = controladorFactura;
-    
+    this.ctlp = ctlp;
     }
     
     @Override
@@ -58,16 +59,15 @@ public class ControladorDatosFactura implements ActionListener{
             vista.numeroFactura.getText(), mesfactura , consumo, fechaEmision, fechaVencimiento, tipoConsumo,
             vista.numeroMedidor.getText(), vista.numeronis.getText(), vista.referenciaCorbo.getText(), Integer.parseInt(vista.diasFacturados.getText()),
             vista.lecturaAnterior.getText(),vista.lecturaActual.getText(), Integer.parseInt(vista.multip.getText()),Integer.parseInt(vista.consumoKWH.getText()), 
-            vista.ordenLectura.getText());
+            vista.ordenLectura.getText(), 0, 0, 0, 0, 0, 0);
             
             //se agrega la factura al fichero
             fichero.imprimir(factura);
+            ctlp.vista.txtNumFactura.setText(String.valueOf(controladorFactura.totalRecibos()));
             
             try {
                 controladorFactura.vista.listaFactura.setModel(fichero.llenarJlist());
-            } catch (IOException ex) {
-                Logger.getLogger(ControladorDatosFactura.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (ParseException ex) {
+            } catch (IOException | ParseException ex) {
                 Logger.getLogger(ControladorDatosFactura.class.getName()).log(Level.SEVERE, null, ex);
             }
             
@@ -83,4 +83,6 @@ public class ControladorDatosFactura implements ActionListener{
         
         return formattedDate;
     }
+     
+       
 }

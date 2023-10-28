@@ -32,6 +32,8 @@ public class menuController implements ActionListener{
     
     ControladorFactura ctlFactura;
     
+    ControladorPrincipal controladorPrincipal;
+    
     public menuController(){
     }
    
@@ -47,15 +49,20 @@ public class menuController implements ActionListener{
        
        cambiarPanel(vista.content, panelPrincipal);
        
+       
    }
    
    public void iniciar() throws IOException, ParseException{
        vista.setTitle("Sistema ");
        vista.setLocationRelativeTo(null);
        
+       controladorPrincipal = new ControladorPrincipal(panelPrincipal);
        ctlFactura = new ControladorFactura(ficheroDatosFactura, panelFactura);
-       controladorFactura = new ControladorDatosFactura(ficheroDatosFactura, panelDatosFactura, ctlFactura);
+       controladorFactura = new ControladorDatosFactura(ficheroDatosFactura, panelDatosFactura, ctlFactura, controladorPrincipal);
        controladorRegistroCliente = new ControladorRegistroCliente(ficheroCliente, panelRegistroClientes, controladorFactura);
+       
+       
+       controladorPrincipal.vista.txtNumFactura.setText(String.valueOf(ctlFactura.totalRecibos()));
        
        
    }
