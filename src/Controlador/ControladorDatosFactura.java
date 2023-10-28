@@ -59,7 +59,88 @@ public class ControladorDatosFactura implements ActionListener{
     // Configurar el modelo del JComboBox una vez, fuera del bucle
     comboBox.setModel(dcm);
 }
+       public void CalculokWh(Factura constructor){
     
+        int kwh = constructor.getConsumoKWH();
+        Double ValorkWh = 0.0;
+        
+        ValorkWh = kwh * 5.798642857142857;
+        
+        constructor.setConsumoCosto(ValorkWh);
+    }
     
+    public void alumbradoPublico(Factura constructor){
     
+        Double valorkwh = constructor.getConsumoCosto();
+        double alumbrado = 0.0;
+        
+        alumbrado = valorkwh * 0.1077592047400254;
+        
+        constructor.setAlumbradopublico(alumbrado);
+    }
+    
+    public void Comercializacion(Factura constructor){
+    
+        Double comercializacion = 0.0;
+        Double Valorkwh = constructor.getConsumoCosto();
+        comercializacion = Valorkwh * 0.0423621290696099;
+        
+        constructor.setComercializacion(comercializacion);
+    }
+    
+    public void subsidio(Factura constructor){
+    
+        Double Total = 0.0;
+        int kwh = constructor.getConsumoKWH();
+        Double Valorkwh= constructor.getConsumoCosto();
+        Double alumbrado = constructor.getAlumbradopublico();
+        Double comercializacion = constructor.getComercializacion();
+        Double subsidio = 0.0;
+        
+        if(kwh >=50 || kwh<99){
+        
+            Total = Valorkwh+alumbrado+comercializacion;
+            subsidio = Total *0.50;
+        }
+        if(kwh >=100 || kwh<=150){
+            Total = Valorkwh+alumbrado+comercializacion;
+            subsidio = Total*0.25;
+        
+            constructor.setSubcidio(subsidio);
+        }
+        if(kwh >150){
+            Double subcidio = 0.0;
+            
+            constructor.setSubcidio(subcidio);
+        }
+    }
+    
+    public void INE(Factura constructor){
+    
+        Double ine = 0.0;
+        Double total = 0.0;
+        Double Valorkwh = constructor.getConsumoCosto();
+        Double alumbrado = constructor.getAlumbradopublico();
+        Double comercializacion = constructor.getComercializacion();
+        Double Subcidio = constructor.getSubcidio();
+        
+        total = Valorkwh+alumbrado+comercializacion-Subcidio;
+        ine = total * 0.01;
+        
+        constructor.setINE(ine);
+    }
+    
+     public void Total(Factura constructor){
+     
+         Double Total = 0.0;
+         Double Valorkwh = constructor.getConsumoCosto();
+         Double alumbrado = constructor.getAlumbradopublico();
+         Double comercializacion = constructor.getComercializacion();
+         Double subsidio = constructor.getSubcidio();
+         Double ine = constructor.getINE();
+         
+         Total = Valorkwh+alumbrado+comercializacion-subsidio+ine;
+         
+         constructor.setTotaldeuda(Total);
+     }  
 }

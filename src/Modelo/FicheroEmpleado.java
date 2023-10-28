@@ -329,9 +329,6 @@ public class FicheroEmpleado{
             String motivoseparacionempleoanterior2 = dato[118].trim();
             String nombrejefedirectoempleoanterior2 = dato[119].trim();
             String puestojefedirectoempleoanterior2 =dato[120].trim();
-            
-            //agregar comentario
-            
             String motivoseparacionempleoanterior2si = dato[121].trim();
             String motivoseparacionempleoanterior2no = dato[122].trim();
             String prestoservicioempleoanterior3desde = dato[123].trim();

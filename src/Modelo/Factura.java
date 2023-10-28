@@ -5,20 +5,19 @@ import java.util.Date;
 
 public class Factura {
 
- Clientes cliente; 
- String oficinaCobro,   circuito, medidor, facturaNumero, mesFactura, consumo,  fechaVencimiento,
+Clientes cliente; 
+ String oficinaCobro, FechaEntrega,  circuito, medidor, facturaNumero, mesFactura, consumo, fechaEmision, fechaVencimiento,
          tipoConsumo, numeroMedidor ;
-    Date fechaentrega, fechaEmision;
 int numeroNis, referenciaCobro, diasFacturados, lecturaAnterior, lecturaActual, multip, consumoKWH;
-double ordenlectura;
+double ordenlectura,ConsumoCosto,Alumbradopublico,subcidio,Comercializacion,INE,Totaldeuda;
 
-    public Factura(Clientes cliente, String oficinaCobro, Date FechaEntrega, String circuito, String medidor,
-            String facturaNumero, String mesFactura, String consumo, Date fechaEmision, String fechaVencimiento,
-            String tipoConsumo, String numeroMedidor, int numeroNis, int referenciaCobro, int diasFacturados,
-            int lecturaAnterior, int lecturaActual, int multip, int consumoKWH, double ordenlectura) {
+    public Factura(Clientes cliente, String oficinaCobro, String FechaEntrega, String circuito, String medidor, String facturaNumero, String mesFactura,
+            String consumo, String fechaEmision, String fechaVencimiento, String tipoConsumo, String numeroMedidor, int numeroNis, int referenciaCobro,
+            int diasFacturados, int lecturaAnterior, int lecturaActual, int multip, int consumoKWH, double ordenlectura,double ConsumoCosto,
+            double Alumbradopublico, double subcidio,double Comercializacion,double INE,double Totaldeuda) {
         this.cliente = cliente;
         this.oficinaCobro = oficinaCobro;
-        this.fechaentrega = FechaEntrega;
+        this.FechaEntrega = FechaEntrega;
         this.circuito = circuito;
         this.medidor = medidor;
         this.facturaNumero = facturaNumero;
@@ -36,6 +35,12 @@ double ordenlectura;
         this.multip = multip;
         this.consumoKWH = consumoKWH;
         this.ordenlectura = ordenlectura;
+//        this.ConsumoCosto = ConsumoCosto;
+//        this.Alumbradopublico = Alumbradopublico;
+//        this.subcidio = subcidio;
+//        this.Comercializacion = Comercializacion;
+//        this.INE = INE;
+//        this.Totaldeuda = Totaldeuda;
     }
 
     public Clientes getCliente() {
@@ -54,12 +59,12 @@ double ordenlectura;
         this.oficinaCobro = oficinaCobro;
     }
 
-    public Date getFechaEntrega() {
-        return fechaentrega;
+    public String getFechaEntrega() {
+        return FechaEntrega;
     }
 
-    public void setFechaEntrega(Date FechaEntrega) {
-        this.fechaentrega = FechaEntrega;
+    public void setFechaEntrega(String FechaEntrega) {
+        this.FechaEntrega = FechaEntrega;
     }
 
     public String getCircuito() {
@@ -102,11 +107,11 @@ double ordenlectura;
         this.consumo = consumo;
     }
 
-    public Date getFechaEmision() {
+    public String getFechaEmision() {
         return fechaEmision;
     }
 
-    public void setFechaEmision(Date fechaEmision) {
+    public void setFechaEmision(String fechaEmision) {
         this.fechaEmision = fechaEmision;
     }
 
@@ -197,7 +202,51 @@ double ordenlectura;
     public void setOrdenlectura(double ordenlectura) {
         this.ordenlectura = ordenlectura;
     }
+    public double getConsumoCosto() {
+        return ConsumoCosto;
+    }
 
+    public void setConsumoCosto(double ConsumoCosto) {
+        this.ConsumoCosto = ConsumoCosto;
+    }
 
-    
+    public double getAlumbradopublico() {
+        return Alumbradopublico;
+    }
+
+    public void setAlumbradopublico(double Alumbradopublico) {
+        this.Alumbradopublico = Alumbradopublico;
+    }
+
+    public double getSubcidio() {
+        return subcidio;
+    }
+
+    public void setSubcidio(double subcidio) {
+        this.subcidio = subcidio;
+    }
+
+    public double getComercializacion() {
+        return Comercializacion;
+    }
+
+    public void setComercializacion(double Comercializacion) {
+        this.Comercializacion = Comercializacion;
+    }
+
+    public double getINE() {
+        return INE;
+    }
+
+    public void setINE(double INE) {
+        this.INE = INE;
+    }
+
+    public double getTotaldeuda() {
+        return Totaldeuda;
+    }
+
+    public void setTotaldeuda(double Totaldeuda) {
+        this.Totaldeuda = Totaldeuda;
+    }
 }
