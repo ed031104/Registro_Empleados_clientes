@@ -47,8 +47,6 @@ public class registroClientes extends javax.swing.JPanel {
         jLabel9 = new javax.swing.JLabel();
         pais = new javax.swing.JTextField();
         agregar = new javax.swing.JButton();
-        eliminar = new javax.swing.JButton();
-        editar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaClientes = new javax.swing.JTable();
 
@@ -132,22 +130,6 @@ public class registroClientes extends javax.swing.JPanel {
         agregar.setBorderPainted(false);
         agregar.setFocusable(false);
 
-        eliminar.setBackground(new java.awt.Color(255, 255, 255));
-        eliminar.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        eliminar.setForeground(new java.awt.Color(204, 204, 255));
-        eliminar.setText("Eliminar");
-        eliminar.setBorderPainted(false);
-        eliminar.setFocusable(false);
-        eliminar.setOpaque(true);
-
-        editar.setBackground(new java.awt.Color(255, 255, 255));
-        editar.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        editar.setForeground(new java.awt.Color(204, 204, 255));
-        editar.setText("Editar");
-        editar.setBorderPainted(false);
-        editar.setFocusable(false);
-        editar.setOpaque(true);
-
         javax.swing.GroupLayout jpanelEsquinasRedondas2Layout = new javax.swing.GroupLayout(jpanelEsquinasRedondas2);
         jpanelEsquinasRedondas2.setLayout(jpanelEsquinasRedondas2Layout);
         jpanelEsquinasRedondas2Layout.setHorizontalGroup(
@@ -156,30 +138,6 @@ public class registroClientes extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(16, 16, 16)
-                        .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
-                                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(114, 114, 114))
-                            .addComponent(cuidad))
-                        .addGap(18, 18, 18)
-                        .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
-                                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(124, 124, 124))
-                            .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
-                                .addComponent(pais)
-                                .addContainerGap())))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelEsquinasRedondas2Layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(agregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(eliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(12, 12, 12)
-                        .addComponent(editar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(12, 12, 12))
                     .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -211,7 +169,28 @@ public class registroClientes extends javax.swing.JPanel {
                                         .addContainerGap())))
                             .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
                                 .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(233, 233, 233))))))
+                                .addGap(233, 233, 233))))
+                    .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(16, 16, 16)
+                        .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelEsquinasRedondas2Layout.createSequentialGroup()
+                                .addComponent(agregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addContainerGap())
+                            .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
+                                .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
+                                        .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGap(114, 114, 114))
+                                    .addComponent(cuidad))
+                                .addGap(18, 18, 18)
+                                .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
+                                        .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGap(124, 124, 124))
+                                    .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
+                                        .addComponent(pais)
+                                        .addContainerGap())))))))
         );
         jpanelEsquinasRedondas2Layout.setVerticalGroup(
             jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -252,16 +231,12 @@ public class registroClientes extends javax.swing.JPanel {
                             .addComponent(cuidad, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(pais, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, Short.MAX_VALUE)
-                .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(eliminar)
-                    .addComponent(editar))
-                .addGap(31, 31, 31))
+                .addComponent(agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33))
         );
 
         tablaClientes.setAutoCreateRowSorter(true);
         tablaClientes.setBackground(new java.awt.Color(240, 240, 240));
-        tablaClientes.setBorder(null);
         tablaClientes.setForeground(java.awt.Color.black);
         tablaClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -301,7 +276,7 @@ public class registroClientes extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 682, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -314,8 +289,6 @@ public class registroClientes extends javax.swing.JPanel {
     public javax.swing.JButton agregar;
     public javax.swing.JTextField cuidad;
     public javax.swing.JTextField direccion;
-    public javax.swing.JButton editar;
-    public javax.swing.JButton eliminar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
