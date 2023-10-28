@@ -3,7 +3,7 @@ package Controlador;
 import Modelo.FicheroCliente;
 import Modelo.FicheroDatosFactura;
 import Vista.DatosFactura;
-import Vista.Factura;
+import Vista.FacturaLuz;
 import Vista.Menu;
 import Vista.Principal;
 import Vista.Register;
@@ -12,6 +12,7 @@ import java.awt.BorderLayout;
 import javax.swing.JPanel;import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.text.ParseException;
 
 
 public class menuController implements ActionListener{
@@ -19,15 +20,18 @@ public class menuController implements ActionListener{
    private Menu vista; 
    Register panelRegister = new Register();
    Principal panelPrincipal = new Principal();
-   Factura panelFactura = new Factura();
+   FacturaLuz panelFactura = new FacturaLuz();
    registroClientes panelRegistroClientes = new registroClientes();
    DatosFactura panelDatosFactura = new DatosFactura();
    
    ControladorRegistroCliente controladorRegistroCliente;
    FicheroCliente ficheroCliente = new FicheroCliente();
-   ControladorDatosFactura controladorFactura;
-    FicheroDatosFactura ficheroFactura = new FicheroDatosFactura();
    
+   ControladorDatosFactura controladorFactura;
+    FicheroDatosFactura ficheroDatosFactura = new FicheroDatosFactura();
+    
+    ControladorFactura ctlFactura;
+    
     public menuController(){
     }
    
@@ -42,16 +46,18 @@ public class menuController implements ActionListener{
        this.vista.btnRegistroFactura.addActionListener(this);
        
        cambiarPanel(vista.content, panelPrincipal);
-       controladorRegistroCliente = new ControladorRegistroCliente(ficheroCliente, panelRegistroClientes);
-       controladorFactura = new ControladorDatosFactura(ficheroFactura, panelDatosFactura);
+       
    }
    
-   public void iniciar() throws IOException{
+   public void iniciar() throws IOException, ParseException{
        vista.setTitle("Sistema ");
        vista.setLocationRelativeTo(null);
-       ControladorRegistroCliente controladorRegistroCliente = new ControladorRegistroCliente();
-       controladorFactura = new ControladorDatosFactura(ficheroFactura, panelDatosFactura);
-
+       
+       ctlFactura = new ControladorFactura(ficheroDatosFactura, panelFactura);
+       controladorFactura = new ControladorDatosFactura(ficheroDatosFactura, panelDatosFactura, ctlFactura);
+       controladorRegistroCliente = new ControladorRegistroCliente(ficheroCliente, panelRegistroClientes, controladorFactura);
+       
+       
    }
    
    public void cambiarPanel(JPanel content,JPanel jp) {

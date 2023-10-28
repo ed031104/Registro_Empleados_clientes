@@ -55,14 +55,10 @@ public class DatosFactura extends javax.swing.JPanel {
         jLabel11 = new javax.swing.JLabel();
         ordenLectura = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        mesFactura = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        consumo = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        fechaVencimiento = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
-        tipoConsumo = new javax.swing.JTextField();
         fechaEmision = new com.toedter.calendar.JDateChooser();
         jLabel17 = new javax.swing.JLabel();
         numeroMedidor = new javax.swing.JTextField();
@@ -74,6 +70,10 @@ public class DatosFactura extends javax.swing.JPanel {
         multip = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
         consumoKWH = new javax.swing.JTextField();
+        fechaVencimiento = new com.toedter.calendar.JDateChooser();
+        consumo = new javax.swing.JComboBox<>();
+        mesFactura = new javax.swing.JComboBox<>();
+        tipoConsumo = new javax.swing.JComboBox<>();
         guardar = new javax.swing.JButton();
 
         setOpaque(false);
@@ -116,7 +116,6 @@ public class DatosFactura extends javax.swing.JPanel {
         Cliente.setForeground(new java.awt.Color(0, 0, 0));
         Cliente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         Cliente.setFocusable(false);
-        Cliente.setOpaque(true);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -215,27 +214,9 @@ public class DatosFactura extends javax.swing.JPanel {
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Mes de la factura");
 
-        mesFactura.setBackground(new java.awt.Color(255, 255, 255));
-        mesFactura.setForeground(new java.awt.Color(0, 0, 0));
-        mesFactura.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        mesFactura.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mesFacturaActionPerformed(evt);
-            }
-        });
-
         jLabel13.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Consumo");
-
-        consumo.setBackground(new java.awt.Color(255, 255, 255));
-        consumo.setForeground(new java.awt.Color(0, 0, 0));
-        consumo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        consumo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                consumoActionPerformed(evt);
-            }
-        });
 
         jLabel14.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
@@ -245,27 +226,9 @@ public class DatosFactura extends javax.swing.JPanel {
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("Fecha de vemcimiento");
 
-        fechaVencimiento.setBackground(new java.awt.Color(255, 255, 255));
-        fechaVencimiento.setForeground(new java.awt.Color(0, 0, 0));
-        fechaVencimiento.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        fechaVencimiento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fechaVencimientoActionPerformed(evt);
-            }
-        });
-
         jLabel16.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("Tipo de consumo");
-
-        tipoConsumo.setBackground(new java.awt.Color(255, 255, 255));
-        tipoConsumo.setForeground(new java.awt.Color(0, 0, 0));
-        tipoConsumo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        tipoConsumo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tipoConsumoActionPerformed(evt);
-            }
-        });
 
         jLabel17.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
@@ -332,6 +295,20 @@ public class DatosFactura extends javax.swing.JPanel {
             }
         });
 
+        consumo.setBackground(new java.awt.Color(255, 255, 255));
+        consumo.setForeground(new java.awt.Color(0, 0, 0));
+        consumo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Real" }));
+        consumo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        consumo.setFocusable(false);
+
+        mesFactura.setBackground(new java.awt.Color(255, 255, 255));
+        mesFactura.setForeground(new java.awt.Color(0, 0, 0));
+        mesFactura.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" }));
+        mesFactura.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        mesFactura.setFocusable(false);
+
+        tipoConsumo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activa kWh TB" }));
+
         javax.swing.GroupLayout jpanelEsquinasRedondas2Layout = new javax.swing.GroupLayout(jpanelEsquinasRedondas2);
         jpanelEsquinasRedondas2.setLayout(jpanelEsquinasRedondas2Layout);
         jpanelEsquinasRedondas2Layout.setHorizontalGroup(
@@ -370,25 +347,29 @@ public class DatosFactura extends javax.swing.JPanel {
                             .addComponent(diasFacturados)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpanelEsquinasRedondas2Layout.createSequentialGroup()
                         .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(numeronis)
                             .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
                                 .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(63, 63, 63))
+                                .addGap(69, 69, 69))
                             .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
                                 .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(33, 33, 33))
-                            .addComponent(mesFactura))
-                        .addGap(18, 18, 18)
+                                .addGap(39, 39, 39))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelEsquinasRedondas2Layout.createSequentialGroup()
+                                .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(numeronis, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(mesFactura, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(13, 13, 13)))
                         .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
                                 .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(91, 91, 91))
-                            .addComponent(circuito)
+                                .addGap(97, 97, 97))
                             .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
                                 .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(82, 82, 82))
-                            .addComponent(consumo))
-                        .addGap(18, 18, 18)
+                                .addGap(88, 88, 88))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelEsquinasRedondas2Layout.createSequentialGroup()
+                                .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(circuito, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(consumo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(14, 14, 14)))
                         .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
                                 .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -402,13 +383,16 @@ public class DatosFactura extends javax.swing.JPanel {
                         .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
                                 .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(66, 66, 66))
-                            .addComponent(numeroFactura)
+                                .addGap(72, 72, 72))
                             .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
                                 .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(1, 1, 1))
-                            .addComponent(fechaVencimiento))
-                        .addGap(18, 18, 18)
+                                .addGap(7, 7, 7))
+                            .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
+                                .addComponent(fechaVencimiento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(14, 14, 14))
+                            .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
+                                .addComponent(numeroFactura)
+                                .addGap(16, 16, 16)))
                         .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
                                 .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -417,7 +401,7 @@ public class DatosFactura extends javax.swing.JPanel {
                             .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
                                 .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(33, 33, 33))
-                            .addComponent(tipoConsumo)))
+                            .addComponent(tipoConsumo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpanelEsquinasRedondas2Layout.createSequentialGroup()
                         .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(numeroMedidor)
@@ -442,10 +426,10 @@ public class DatosFactura extends javax.swing.JPanel {
                                 .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(99, 99, 99))
                             .addComponent(multip))
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
-                                .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
                                 .addGap(39, 39, 39))
                             .addComponent(consumoKWH))))
                 .addGap(16, 16, 16))
@@ -499,28 +483,29 @@ public class DatosFactura extends javax.swing.JPanel {
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ordenLectura, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(21, 21, 21)
+                .addGap(18, 18, 18)
                 .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
                         .addComponent(jLabel12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(mesFactura, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(consumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(mesFactura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
                         .addComponent(jLabel13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(consumo, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(31, 31, 31))
                     .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
-                        .addComponent(jLabel16)
+                        .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel15)
+                                .addComponent(jLabel14))
+                            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tipoConsumo, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
-                        .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel15)
-                            .addComponent(jLabel14))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(fechaEmision, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(fechaVencimiento, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE))))
+                        .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(fechaEmision, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(fechaVencimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tipoConsumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addGroup(jpanelEsquinasRedondas2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jpanelEsquinasRedondas2Layout.createSequentialGroup()
@@ -543,7 +528,7 @@ public class DatosFactura extends javax.swing.JPanel {
                         .addComponent(jLabel21)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(consumoKWH, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         guardar.setBackground(new java.awt.Color(204, 204, 255));
@@ -563,11 +548,11 @@ public class DatosFactura extends javax.swing.JPanel {
                 .addGap(12, 12, 12)
                 .addGroup(jpanelEsquinasRedondas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpanelEsquinasRedondas1Layout.createSequentialGroup()
-                        .addComponent(guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jpanelEsquinasRedondas1Layout.createSequentialGroup()
                         .addComponent(jpanelEsquinasRedondas2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(32, 32, 32))))
+                        .addGap(32, 32, 32))
+                    .addGroup(jpanelEsquinasRedondas1Layout.createSequentialGroup()
+                        .addComponent(guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jpanelEsquinasRedondas1Layout.setVerticalGroup(
             jpanelEsquinasRedondas1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -613,22 +598,6 @@ public class DatosFactura extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_ordenLecturaActionPerformed
 
-    private void mesFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mesFacturaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mesFacturaActionPerformed
-
-    private void consumoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consumoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_consumoActionPerformed
-
-    private void fechaVencimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fechaVencimientoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fechaVencimientoActionPerformed
-
-    private void tipoConsumoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoConsumoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tipoConsumoActionPerformed
-
     private void numeroMedidorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numeroMedidorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_numeroMedidorActionPerformed
@@ -653,12 +622,12 @@ public class DatosFactura extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JComboBox<Clientes> Cliente;
     public javax.swing.JTextField circuito;
-    public javax.swing.JTextField consumo;
+    public javax.swing.JComboBox<String> consumo;
     public javax.swing.JTextField consumoKWH;
     public javax.swing.JTextField diasFacturados;
     public com.toedter.calendar.JDateChooser fechaEmision;
     public com.toedter.calendar.JDateChooser fechaEntrega;
-    public javax.swing.JTextField fechaVencimiento;
+    public com.toedter.calendar.JDateChooser fechaVencimiento;
     public javax.swing.JButton guardar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -688,7 +657,7 @@ public class DatosFactura extends javax.swing.JPanel {
     public javax.swing.JTextField lecturaActual;
     public javax.swing.JTextField lecturaAnterior;
     public javax.swing.JTextField medidor;
-    public javax.swing.JTextField mesFactura;
+    public javax.swing.JComboBox<String> mesFactura;
     public javax.swing.JTextField multip;
     public javax.swing.JTextField numeroFactura;
     public javax.swing.JTextField numeroMedidor;
@@ -696,6 +665,6 @@ public class DatosFactura extends javax.swing.JPanel {
     public javax.swing.JTextField oficinaCobro;
     public javax.swing.JTextField ordenLectura;
     public javax.swing.JTextField referenciaCorbo;
-    public javax.swing.JTextField tipoConsumo;
+    public javax.swing.JComboBox<String> tipoConsumo;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,6 +4,7 @@ package Vista;
 import Controlador.menuController;
 import java.awt.Color;
 import java.io.IOException;
+import java.text.ParseException;
 
 public class Menu extends javax.swing.JFrame {
 
@@ -11,8 +12,6 @@ public class Menu extends javax.swing.JFrame {
     
     public Menu() {
         initComponents();
-        
-        
     }
 
     @SuppressWarnings("unchecked")
@@ -462,7 +461,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegistroFacturaMouseExited
 
     
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, ParseException {
         Menu vista = new Menu();
         
         //Abre el frame principal "Menu" y se inicializa sun controlador 

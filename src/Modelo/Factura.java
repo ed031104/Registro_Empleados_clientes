@@ -1,21 +1,23 @@
 
 package Modelo;
 
-import java.util.Date;
 
 public class Factura {
 
  Clientes cliente; 
- String oficinaCobro,   circuito, medidor, facturaNumero, mesFactura, consumo,  fechaVencimiento,
-         tipoConsumo, numeroMedidor ;
-    Date fechaentrega, fechaEmision;
-int numeroNis, referenciaCobro, diasFacturados, lecturaAnterior, lecturaActual, multip, consumoKWH;
-double ordenlectura;
 
-    public Factura(Clientes cliente, String oficinaCobro, Date FechaEntrega, String circuito, String medidor,
-            String facturaNumero, String mesFactura, String consumo, Date fechaEmision, String fechaVencimiento,
-            String tipoConsumo, String numeroMedidor, int numeroNis, int referenciaCobro, int diasFacturados,
-            int lecturaAnterior, int lecturaActual, int multip, int consumoKWH, double ordenlectura) {
+ String oficinaCobro,   circuito, medidor, facturaNumero, mesFactura, consumo,  
+         tipoConsumo, numeroMedidor, numeroNis, referenciaCobro,lecturaAnterior, lecturaActual,ordenlectura, fechaentrega, fechaEmision, fechaVencimiento ;
+ 
+
+
+int   diasFacturados,  multip, consumoKWH;
+
+
+    public Factura(Clientes cliente, String oficinaCobro, String FechaEntrega, String circuito, String medidor,
+            String facturaNumero, String mesFactura, String consumo, String fechaEmision, String fechaVencimiento,
+            String tipoConsumo, String numeroMedidor, String numeroNis, String referenciaCobro, int diasFacturados,
+            String lecturaAnterior, String lecturaActual, int multip, int consumoKWH, String ordenlectura) {
         this.cliente = cliente;
         this.oficinaCobro = oficinaCobro;
         this.fechaentrega = FechaEntrega;
@@ -54,11 +56,11 @@ double ordenlectura;
         this.oficinaCobro = oficinaCobro;
     }
 
-    public Date getFechaEntrega() {
+    public String getFechaEntrega() {
         return fechaentrega;
     }
 
-    public void setFechaEntrega(Date FechaEntrega) {
+    public void setFechaEntrega(String FechaEntrega) {
         this.fechaentrega = FechaEntrega;
     }
 
@@ -102,11 +104,11 @@ double ordenlectura;
         this.consumo = consumo;
     }
 
-    public Date getFechaEmision() {
+    public String getFechaEmision() {
         return fechaEmision;
     }
 
-    public void setFechaEmision(Date fechaEmision) {
+    public void setFechaEmision(String fechaEmision) {
         this.fechaEmision = fechaEmision;
     }
 
@@ -134,19 +136,19 @@ double ordenlectura;
         this.numeroMedidor = numeroMedidor;
     }
 
-    public int getNumeroNis() {
+    public String getNumeroNis() {
         return numeroNis;
     }
 
-    public void setNumeroNis(int numeroNis) {
+    public void setNumeroNis(String numeroNis) {
         this.numeroNis = numeroNis;
     }
 
-    public int getReferenciaCobro() {
+    public String getReferenciaCobro() {
         return referenciaCobro;
     }
 
-    public void setReferenciaCobro(int referenciaCobro) {
+    public void setReferenciaCobro(String referenciaCobro) {
         this.referenciaCobro = referenciaCobro;
     }
 
@@ -158,19 +160,19 @@ double ordenlectura;
         this.diasFacturados = diasFacturados;
     }
 
-    public int getLecturaAnterior() {
+    public String getLecturaAnterior() {
         return lecturaAnterior;
     }
 
-    public void setLecturaAnterior(int lecturaAnterior) {
+    public void setLecturaAnterior(String lecturaAnterior) {
         this.lecturaAnterior = lecturaAnterior;
     }
 
-    public int getLecturaActual() {
+    public String getLecturaActual() {
         return lecturaActual;
     }
 
-    public void setLecturaActual(int lecturaActual) {
+    public void setLecturaActual(String lecturaActual) {
         this.lecturaActual = lecturaActual;
     }
 
@@ -190,14 +192,17 @@ double ordenlectura;
         this.consumoKWH = consumoKWH;
     }
 
-    public double getOrdenlectura() {
+    public String getOrdenlectura() {
         return ordenlectura;
     }
 
-    public void setOrdenlectura(double ordenlectura) {
+    public void setOrdenlectura(String ordenlectura) {
         this.ordenlectura = ordenlectura;
     }
 
-
+     @Override
+    public String toString(){
+    return cliente.nombre;
+    }
     
 }

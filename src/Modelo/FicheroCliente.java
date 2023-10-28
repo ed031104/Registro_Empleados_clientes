@@ -8,6 +8,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
@@ -84,9 +86,28 @@ public class FicheroCliente {
         Object[] fila = {clientes.getNombre(), clientes.getSegundoNombre(), clientes.getApellidoPaterno(), clientes.getApellidoMaterno()
         , clientes.getDireccion(), clientes.getCuidad(), clientes.getPais()};
         modeloTabla.addRow(fila);
+        }
+        return modeloTabla; 
     }
+ 
+    public DefaultComboBoxModel llenarComboBox() throws IOException  {
+        
+    DefaultComboBoxModel<Clientes> dcm = new DefaultComboBoxModel<>();
+    ArrayList<Clientes> listaClientes = new ArrayList<>();
+       
+    //se llena el array listaclientes con la infromacion del fichero
+    listaClientes = ExtraerDatos();
     
-    return modeloTabla;
+    if (listaClientes != null) { // Verificar si la lista no es nula
+        for (Clientes cliente : listaClientes) {
+            dcm.addElement(cliente);
+        }
+        //se devuelve la lista
+        return dcm;
+    } else {
+        JOptionPane.showMessageDialog(null, "No hay usuarios registrados.");
+        // Manejar el caso en el que la lista sea nula o esté vacía Puedes mostrar un mensaje o realizar una acción apropiada.
+    }
+    return null;
 }
-    
 }
